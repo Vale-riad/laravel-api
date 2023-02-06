@@ -19,18 +19,18 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($projects as $project)
+            @foreach ($types as $type)
             <tr>
-                <td>{{ $project->id }}</td>
-                <td>{{ $project->title }}</td>
-                <td>{{ $project->slug }}</td>
+                <td>{{ $type->id }}</td>
+                <td>{{ $type->title }}</td>
+                <td>{{ $type->slug }}</td>
                 <td>
-                  <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-success d-flex">Dettaglio</a>
+                  <a href="{{ route('admin.types.show', $type) }}" class="btn btn-success d-flex">Dettaglio</a>
                   
                 </td>
-                <td><a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning">Modifica</a></td>
+                <td><a href="{{ route('admin.types.edit', $type) }}" class="btn btn-warning">Modifica</a></td>
                 <td>
-                  <form action="{{route('admin.projects.destroy', $project)}}" method="POST">
+                  <form action="{{route('admin.types.destroy', $type)}}" method="POST">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger" >Cancella</button>
@@ -41,6 +41,6 @@
         </tbody>
       </table>
       <div class="my-4 text-center">
-        <a href="{{route('admin.projects.create')}}" class="btn btn-primary" >Crea</a>
+        <a href="{{route('admin.types.create')}}" class="btn btn-primary" >Crea</a>
       </div>
 @endsection

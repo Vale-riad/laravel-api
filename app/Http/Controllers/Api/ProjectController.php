@@ -22,7 +22,7 @@ class ProjectController extends Controller
     } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
        
         return response([
-            'error' => '404 Post not found'
+            'error' => '404 Progetto not found'
         ], 404);
     
     }
